@@ -1,0 +1,278 @@
+@import "./variables";
+@import "./fonts";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 9%;
+    position: fixed;
+    background: rgba($color: $color-russian-violent-dark, $alpha: 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+
+    .title {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title-link {
+            color: white;
+            text-decoration: none;
+            font-family: "El Messiri", sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.2ch;
+            padding: 0 1rem 0 2rem;
+            transition: 0.25s;
+        }
+
+        .vision-img {
+            height: 80%;
+            transition: 0.5s;
+        }
+
+        &:hover {
+            .title-link {
+                text-shadow: 0px 0px 10px white;
+                &:hover {
+                    text-shadow: 3px 3px 10px white;
+                }
+            }
+
+            .vision-img {
+                transform: rotateZ(45deg);
+            }
+        }
+    }
+
+    .icons {
+        height: 100%;
+        padding: 1rem;
+
+        a {
+            height: 100%;
+            display: inline-block;
+            text-decoration: none;
+            padding: 0 1rem;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+            transition: 0.5s;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.section-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, $color-russian-violent-dark, $color-dark-purple) fixed;
+    overflow: hidden;
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .slide-text {
+            width: 50%;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 4rem;
+
+            .text-highlight {
+                color: $color-amethyst;
+                font-weight: 400;
+            }
+            .bold {
+                font-weight: 600;
+            }
+
+            .char-name {
+                color: white;
+                font-family: "Minion Pro Regular";
+                font-size: 8rem;
+                letter-spacing: 0.1ch;
+            }
+
+            .char-info {
+                color: white;
+                font-family: "Quicksand", sans-serif;
+                font-size: 1.3rem;
+                letter-spacing: 0.1ch;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 20%;
+                    height: 3px;
+                    background: $color-rusty-red;
+                    position: absolute;
+                    top: -1rem;
+                    left: 0;
+                }
+                &::after {
+                    content: "";
+                    width: 20%;
+                    height: 3px;
+                    background: $color-rusty-red;
+                    position: absolute;
+                    bottom: -1rem;
+                    right: 0;
+                }
+            }
+        }
+
+        .slide-image-wrapper {
+            width: 50%;
+            height: 80%;
+            margin: 5%;
+            background: linear-gradient(to bottom, $color-rebecca-purple, $color-russian-violent);
+            position: relative;
+            box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+
+            .slide-image {
+                opacity: 0;
+                object-fit: cover;
+                position: absolute;
+                z-index: 3;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    .slide {
+        .slide-text {
+            width: auto;
+            opacity: 1;
+            padding: 4rem;
+
+            .char-name {
+                font-size: 6rem;
+            }
+            .char-info {
+                &::after {
+                    left: 25%;
+                }
+            }
+        }
+
+        .slideshow {
+            width: 40%;
+            height: 70%;
+            margin: 5%;
+            background: $color-dark-purple;
+            position: relative;
+            box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+
+            .slideshow-slide {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: center / cover no-repeat;
+                overflow: hidden;
+
+                .slide-line {
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to bottom, $color-rebecca-purple, $color-russian-violent-dark);
+                }
+            }
+            .slideshow-slide-1 {
+                background-image: url("../images/slides/Fischl2.jpg");
+            }
+            .slideshow-slide-2 {
+                background-image: url("../images/slides/Keqing.png");
+            }
+            .slideshow-slide-3 {
+                background-image: url("../images/slides/Fischl1.png");
+            }
+            .slideshow-slide-4 {
+                background-image: url("../images/slides/Beidou.jpg");
+            }
+        }
+    }
+
+    .scroll-down-text {
+        color: white;
+        font-family: "Quicksand", sans-serif;
+        transform: rotateZ(90deg);
+        cursor: vertical-text;
+        position: fixed;
+        bottom: 20%;
+        left: -30px;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: $color-rusty-red;
+            position: absolute;
+            left: 110%;
+            bottom: 40%;
+        }
+    }
+}
+.section-2 {
+    .slide-image {
+        width: 150%;
+        left: -20%;
+        top: -10%;
+    }
+}
+.section-3 {
+    .slide-image {
+        width: 140%;
+        left: -20%;
+        top: -15%;
+    }
+}
+.section-4 {
+    .slide-image {
+        width: 160%;
+        left: -40%;
+        top: -10%;
+    }
+}

@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Minion Pro Regular";
+  src: url("./fonts/MinionPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "Genshin";
+  src: url("./fonts/Genshin.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 9%;
+  position: fixed;
+  background: rgba(56, 31, 80, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 4;
+}
+
+header .title {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .title .title-link {
+  color: white;
+  text-decoration: none;
+  font-family: "El Messiri", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2ch;
+  padding: 0 1rem 0 2rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+header .title .vision-img {
+  height: 80%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .title:hover .title-link {
+  text-shadow: 0px 0px 10px white;
+}
+
+header .title:hover .title-link:hover {
+  text-shadow: 3px 3px 10px white;
+}
+
+header .title:hover .vision-img {
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+header .icons {
+  height: 100%;
+  padding: 1rem;
+}
+
+header .icons a {
+  height: 100%;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 1rem;
+  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .icons a:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+header .icons a img {
+  height: 100%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+.section-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#381f50), to(#261536)) fixed;
+  background: linear-gradient(to bottom, #381f50, #261536) fixed;
+  overflow: hidden;
+}
+
+.section .slide {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section .slide .slide-text {
+  width: 50%;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 4rem;
+}
+
+.section .slide .slide-text .text-highlight {
+  color: #9b56db;
+  font-weight: 400;
+}
+
+.section .slide .slide-text .bold {
+  font-weight: 600;
+}
+
+.section .slide .slide-text .char-name {
+  color: white;
+  font-family: "Minion Pro Regular";
+  font-size: 8rem;
+  letter-spacing: 0.1ch;
+}
+
+.section .slide .slide-text .char-info {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.1ch;
+  position: relative;
+}
+
+.section .slide .slide-text .char-info::before {
+  content: "";
+  width: 20%;
+  height: 3px;
+  background: #d92644;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+}
+
+.section .slide .slide-text .char-info::after {
+  content: "";
+  width: 20%;
+  height: 3px;
+  background: #d92644;
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+}
+
+.section .slide .slide-image-wrapper {
+  width: 50%;
+  height: 80%;
+  margin: 5%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#693d9c), to(#41245c));
+  background: linear-gradient(to bottom, #693d9c, #41245c);
+  position: relative;
+  -webkit-box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.section .slide .slide-image-wrapper .slide-image {
+  opacity: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.section-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-1 .slide .slide-text {
+  width: auto;
+  opacity: 1;
+  padding: 4rem;
+}
+
+.section-1 .slide .slide-text .char-name {
+  font-size: 6rem;
+}
+
+.section-1 .slide .slide-text .char-info::after {
+  left: 25%;
+}
+
+.section-1 .slide .slideshow {
+  width: 40%;
+  height: 70%;
+  margin: 5%;
+  background: #261536;
+  position: relative;
+  -webkit-box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .slide .slideshow .slideshow-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: center / cover no-repeat;
+  overflow: hidden;
+}
+
+.section-1 .slide .slideshow .slideshow-slide .slide-line {
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#693d9c), to(#381f50));
+  background: linear-gradient(to bottom, #693d9c, #381f50);
+}
+
+.section-1 .slide .slideshow .slideshow-slide-1 {
+  background-image: url("../images/slides/Fischl2.jpg");
+}
+
+.section-1 .slide .slideshow .slideshow-slide-2 {
+  background-image: url("../images/slides/Keqing.png");
+}
+
+.section-1 .slide .slideshow .slideshow-slide-3 {
+  background-image: url("../images/slides/Fischl1.png");
+}
+
+.section-1 .slide .slideshow .slideshow-slide-4 {
+  background-image: url("../images/slides/Beidou.jpg");
+}
+
+.section-1 .scroll-down-text {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  cursor: vertical-text;
+  position: fixed;
+  bottom: 20%;
+  left: -30px;
+}
+
+.section-1 .scroll-down-text::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #d92644;
+  position: absolute;
+  left: 110%;
+  bottom: 40%;
+}
+
+.section-2 .slide-image {
+  width: 150%;
+  left: -20%;
+  top: -10%;
+}
+
+.section-3 .slide-image {
+  width: 140%;
+  left: -20%;
+  top: -15%;
+}
+
+.section-4 .slide-image {
+  width: 160%;
+  left: -40%;
+  top: -10%;
+}
+/*# sourceMappingURL=style.css.map */
