@@ -2,6 +2,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
 var clipImageInterval;
+var lastScrollTop;
 
 const sections = document.querySelectorAll(".section");
 
@@ -29,6 +30,9 @@ function bodyLoad() {
     addTextAnimation(".section-2", ".slide-text");
     addTextAnimation(".section-3", ".slide-text");
     addTextAnimation(".section-4", ".slide-text");
+
+    navigation();
+    window.addEventListener("wheel", (e) => navigation(e));
 }
 
 function slideshow() {
@@ -120,10 +124,37 @@ function hideScrollDown() {
             toggleActions: "restart none reverse none",
             start: "bottom 80%",
         },
-        y: "1000%",
+        y: "1500%",
         duration: 0.75,
         ease: "none",
     });
+}
+
+function navigation(e) {
+    const ul = document.querySelector(".nav ul");
+    const listItems = ul.querySelectorAll("li");
+    const sectionActive = document.querySelector(".section.active");
+    var index =
+        [...sectionActive.parentElement.children].indexOf(sectionActive) - 1;
+    listItems[index].classList.toggle("active");
+
+    if (e == undefined) return;
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    //Scroll down
+    if (e.deltaY > 0) {
+        if (index < listItems.length - 1) {
+            listItems[index + 1].classList.toggle("active");
+        } else if (index == listItems.length - 1) {
+            listItems[index].classList.toggle("active");
+        }
+    } else {
+        if (index > 0) {
+            listItems[index - 1].classList.toggle("active");
+        } else if (index == 0) {
+            listItems[index].classList.toggle("active");
+        }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
 }
 
 function goToSection(section) {
