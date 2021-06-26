@@ -120,8 +120,8 @@ function hideScrollDown() {
             toggleActions: "restart none reverse none",
             start: "bottom 80%",
         },
-        y: 250,
-        duration: 0.5,
+        y: 500,
+        duration: 1,
         ease: "none",
     });
 }
